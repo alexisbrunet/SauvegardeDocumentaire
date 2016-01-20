@@ -9,16 +9,15 @@
     <li class="center-block hidden-xs">
         <a href="../php/index.php" id="title"><img id="logothot" src="../pictures/logothot.png" alt="" />Thot</a>
     </li>
-
     <!-- MENU -->
     <div class="navbar-wrapper" id="menu">
         <nav class="navbar navbar-default">    
             <a class="navbar-brand" href="#"></a>
             <ul  class="nav navbar-nav navbar-brand text-center">
                 <li ><a href="../php/index.php" class="text-center glyphicon glyphicon-home"> Home</a></li> 
-                <li><a  href="#" class="text-center">Mon Profil</a></li>                        
-                <li><a  href="#" class="text-center">Mes Documents</a></li>                     
-                <li><a  href="#" class="text-center">Mes Equipes</a></li>                       
+                <li><a  href="#" class="text-center" data-toggle="modal" data-target="#message">Mon Profil</a></li>                        
+                <li><a  href="#" class="text-center" data-toggle="modal" data-target="#message">Mes Documents</a></li>                     
+                <li><a  href="#" class="text-center" data-toggle="modal" data-target="#message">Mes Equipes</a></li>                       
             </ul> 
             <ul class=" navbar-nav pull-center">    
                 <li>
@@ -31,5 +30,15 @@
                 </li>
             </ul>   
         </nav>
+        <div class="modal fade" id="message" tabindex="-1" role="dialog" aria-labelledby="message" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>Veuille vous connectez pour continuer</p>
+                </div>
+            </div>
+        </div>
+    
+
     </div>
 </header>
