@@ -28,11 +28,10 @@
               <div class="col-xs-6 col-centered col-fixed">
                   <!-- First Column -->
                 <div class="row">
-                <?php if (! $connected)
-                  include '../includes/guestCol.inc.php'; ?>
-                <!-- <h1>Infos</h1>
-                <p>Blabla.</p> -->
-
+                  <?php if ($connected)
+                      include '../includes/userCol.inc.php';
+                    else
+                      include '../includes/guestCol.inc.php'; ?>
               </div>
           </div>
       </div>
