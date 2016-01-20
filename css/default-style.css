@@ -1,0 +1,181 @@
+@charset "UTF-8";
+body {
+  background:url('../pictures/main.jpg') no-repeat center center fixed;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/**************************************/
+/* ------------- HEADER ------------- */
+/**************************************/
+header {
+  background-color: #83CF83;
+}
+/* ---- User Menu Dropdown ---- */
+#user span {
+  color:#3C3C3C;
+}
+/* ---- Logo ---- */
+/* ---- Trigger Notifications Center ---- */
+.hasNotif {
+  color: #E74C3C;
+}
+/**************************************/
+/* ------- NOTIFICATION CENTER ------ */
+/**************************************/
+.sideMenu {
+  background: url('../pictures/mainblurred.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.sideMenu h3 {
+  background: #0d77b6;
+}
+#menuUserZone {
+  background:#414141;
+}
+.notif-type {
+  color: #f7fcf4;
+  background:#414141;
+}
+/**************************************/
+/* ---------- PAGE CONTENT ---------- */
+/**************************************/
+/* ---- Column 1 ---- */
+.co {
+  background-color:#e8704e;
+}
+.no-co {
+  color:#7b7b7b;
+  background-color:rgba(115,115,115,0.67);
+}
+.profil-co {
+  background:#27a0d7; 
+}
+.profil-noco button {
+  color: rgba(0,0,0,.8);
+  border: 0 rgba(0,0,0,0);
+  background-color:#F7F7F7;
+}
+.profil-noco button:hover {
+  background-color:#CACACA;
+}
+.profil-noco {
+  background:rgba(240,240,240,0.80); 
+}
+.brief-co {
+  background:#2987BA;
+}
+.brief-noco {
+  background:#4C4C4C;
+  color:#FFFFFF;
+}
+/* ---- Column 2 ---- */
+#block-search {
+  background: #23beb8;
+}
+#block-search .btn-primary {
+  background-color: #00827D;
+  border-color: #00625E;
+}
+#block-search .btn-primary:hover {
+  border-color: #00625E;
+}
+#block-stats {
+  background:#5dc9e6;
+}
+.stat-item:hover {background:#4592A0;}
+#block-infos {
+  background:#EEE48E;
+}
+/* ---- Column 3 ---- */
+#block-calendar {
+  background:#2fa4da;
+  color: white;
+}
+.badge-today {
+  background-color:#056C9E;
+}
+#block-recent {
+  background:#91DBF0;
+}
+#recent-label {
+  border-bottom: 3px solid #FFFFFF;
+} 
+.recent-path {
+  border-bottom: 1px solid #E9E9E9;
+}
+/**************************************/
+/* ---------- PAGE PROFIL ---------- */
+/**************************************/
+#profil {
+  background:#EEE48E;
+}
+#profil-header {
+  background:#D9C760;
+}
+#edit {
+  background:#F0E480;
+}
+#edit:hover {
+  -webkit-box-shadow: inset 0px 0px 6px 2px #D9C760;
+  box-shadow: inset 0px 0px 6px 2px #D9C760;
+}
+#edit a {
+  color:#FFF;
+}
+#profil-column1 {
+  border-right: 3px solid #FFF;
+}
+#profil-column2 {
+  background:#EEE48E; 
+}
+#profil-car {
+  border-bottom: 3px solid #FFFFFF;
+}
+.label-primary {
+  background-color:#D5A51C;
+}
+/**************************************/
+/* ---------- PAGE SEARCH ---------- */
+/**************************************/
+#search-area {
+  background:#EDEDED;
+}
+#search-header {
+   background:#ADADAD;
+}
+.user-card {background:#C85758;}
+.path-card {background:#40A8D2;}
+.upath {background:#A4484A;}
+.hpath {background:#3086A5;}
+.card a {
+  background:#035D73;
+  color:#FFFFFF;
+}
+/**************************************/
+/* ---------- PAGE PATH ---------- */
+/**************************************/
+#path-details {
+  background: #edeef2;
+}
+#path-view {
+  background: #edeef2;
+}
+#path-edit {
+  background: #edeef2;
+}
+
+/**************************************/
+/* ----------- TABLEAUX -------------- */
+/**************************************/
+.table-striped > tbody > tr:nth-child(odd) > td {
+  background-color: #46b8da;
+}
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
+  background-color: #4592A0;
+  color:#eeeeee;
+}
