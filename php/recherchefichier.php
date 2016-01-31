@@ -8,7 +8,7 @@
   // on crée la requête SQL 
   $sql = 'Select id_fichier
   From autorisation
-  Where id_utilisateur = $_Session'; 
+  Where id_utilisateur = $_SESSION['id_utilisateur']'; 
 
   // on envoie la requête 
   $req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error()); 
