@@ -1,6 +1,6 @@
 <header>
     <!-- Module de connexion / déconnexion -->
-    <ul class="nav nav-pills">
+    <ul class="navig">
         <li> 
             <div id="user"><p class="invite">Invité</p> </div>
         </li>

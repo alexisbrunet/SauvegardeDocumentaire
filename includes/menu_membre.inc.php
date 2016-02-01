@@ -2,9 +2,9 @@
     <ul id="headerBar" class="list-inline">
         <!-- Module de connexion / déconnexion -->
         <li class="pull-left">
-            <ul class="nav nav-pills">
+            <ul class="navig">
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <div id="user"> <img <?php echo $pseudo; ?></span> </div> <!-- A modifier, recuperer le nom -->
+                        <div id="user"> <span> <?php echo $pseudo; ?></span> </div> <!-- A modifier, recuperer le nom -->
                     </a>
                     <ul class="dropdown-menu">
                         <li class="divider"></li>
@@ -27,7 +27,7 @@
                 <li ><a href="#" class="text-center glyphicon glyphicon-home">Home</a></li> 
                 <li><a  href="#" class="text-center">Mon Profil</a></li>                        <!-- creer le fichier profil.php -->
                 <li><a  href="#" class="text-center">Mes Documents</a></li>                     <!-- creer le fichier document.php -->
-                <li><a  href="#" class="text-center">Mes Equipes</a></li>                       <!-- creer le fichier equipe.php -->
+                <li><a  href="../php/mesEquipes.php" class="text-center">Mes Equipes</a></li>                       <!-- creer le fichier equipe.php -->
             </ul>    
             <ul class=" navbar-nav pull-center">    
                 <li>

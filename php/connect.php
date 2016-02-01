@@ -19,7 +19,7 @@ if(isset($_POST) && isset($_POST['mail']) AND isset($_POST['passe'])){
             $_SESSION['adresse_mail'] = $_POST['mail'];
             $mail = $_POST['mail'];
 
-            $query = $bd->prepare('SELECT id-utilisateur,nom,prenom,pseudo FROM utilisateur WHERE mail = ?'); // A modifier
+            $query = $bd->prepare('SELECT id_utilisateur,nom,prenom,pseudo FROM utilisateur WHERE mail = ?'); // A modifier
             $query->execute(array($_POST['mail']));
             $donnees = $query->fetch();
 
