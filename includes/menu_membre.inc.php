@@ -1,10 +1,14 @@
+<?php require_once 'user.class.php';?>
 <header>
     <ul id="headerBar" class="list-inline">
         <!-- Module de connexion / déconnexion -->
         <li class="pull-left">
+            <?php if(isset($user)): ?>
+            Bienvenue à vous, <?=$user->getNom()?> !
+            <?php endif; ?> 
             <ul class="navig">
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <div id="user"> <span> <?php echo $pseudo; ?></span> </div> <!-- A modifier, recuperer le nom -->
+                       
                     </a>
                     <ul class="dropdown-menu">
                         <li class="divider"></li>
@@ -25,7 +29,7 @@
             <a class="navbar-brand" href="#"></a>
             <ul  class="nav navbar-nav navbar-brand text-center">
                 <li ><a href="#" class="text-center glyphicon glyphicon-home">Home</a></li> 
-                <li><a  href="#" class="text-center">Mon Profil</a></li>                        <!-- creer le fichier profil.php -->
+                <li><a  href="../php/account.php" class="text-center">Mon Profil</a></li>                        <!-- creer le fichier profil.php -->
                 <li><a  href="#" class="text-center">Mes Documents</a></li>                     <!-- creer le fichier document.php -->
                 <li><a  href="../php/mesEquipes.php" class="text-center">Mes Equipes</a></li>                       <!-- creer le fichier equipe.php -->
             </ul>    

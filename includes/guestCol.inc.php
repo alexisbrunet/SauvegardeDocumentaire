@@ -44,17 +44,19 @@
                     <h4 class="modal-title" id="connectModalTitle">Connexion</h4>
                 </div>
                 <div class="modal-body">
-                    <form action="connect.php" method="post" role="form">
+                    <form action="../php/index.php" method="post" role="form">
                       <div class="form-group">
-                        <label for="mail">Adresse mail</label><br>
-                        <input type="text" id="mailConnect" class="form-control" name="mail" <?php if(isset($_GET['mail'])) echo "value='", $_GET['mail'], "'"; ?> placeholder="Ex: toto@gmail.com"/><br>
+                        <label for="Connect">Adresse mail ou Pseudo</label><br>
+                        <input type="text" id="Connect" class="form-control" name="info" <?php if(isset($_GET['mail'])) echo "value='", $_GET['mail'], "'"; ?> placeholder="Ex: toto@gmail.com"/><br>
                         </div>
                         <div class="form-group">
                             <label for="passe">Mot de passe</label><br>
-                            <input type="password" name="passe" id="passe" class="form-control" placeholder="Mot de passe"/><br><br>
+                            <input type="password" name="motDePasse2" id="passe" class="form-control" placeholder="Mot de passe"/><br><br>
                         </div>
-                        <button name="button" type="submit" class="btn btn-primary btn-form">Se connecter</button>
+                        <button name="Connecter" type="submit" class="btn btn-primary btn-form">Se connecter</button>
                         <button type="button" class="btn btn-default btn-form" data-dismiss="modal">Annuler</button>
+            
+
                     </form>
                 </div>
             </div>
@@ -66,7 +68,9 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <form action="create.php" id="form_fields" method="post" role="form">
+        
+        
+                    <form action="../php/index.php" id="form_fields" method="post" role="form">
                         <div class="form-group">
                             <label for="prenom">Prénom (Requis)</label>
                             <input type="text" name="prenom" placeholder="Prénom" class="form-control" id="prenom"/>
@@ -88,8 +92,10 @@
                             <input type="password" name="motDePasse" placeholder="**********" class="form-control" id="motDePasse"/>
                         </div>
 
-                        <button name="button" type="submit" class="btn btn-primary btn-form"/>Nous rejoindre</button>
+                        <button name="Rejoindre" type="submit" class="btn btn-primary btn-form"/>Nous rejoindre</button>
                         <button type="button" class="btn btn-default btn-form" data-dismiss="modal">Annuler</button>
+            
+            
 
                     </form>
                 </div>
