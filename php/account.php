@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require '../connect_bd.php';
-require '../user.php';
+require '../includes/connect_bd.php';
+require '../includes/user.php';
 if(!isset($user))
 	die('Vous devez être connecté pour voir cette page');
 if(isset($_POST['deleteAccount']))
@@ -35,7 +35,6 @@ elseif(isset($_POST['editAccount'],$_POST['nom'],$_POST['mail'],$_POST['prenom']
 }
 ?>
 
-<?php include '../includes/verif.php'; ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -49,43 +48,46 @@ elseif(isset($_POST['editAccount'],$_POST['nom'],$_POST['mail'],$_POST['prenom']
 
 <div class="content-wrapper">
 <?php  include '../includes/menu_membre.inc.php'; ?>
+</div>
 <div class="container" >
-	<form method="post" class="padding">
-		<?php if(isset($EditError)): ?>
-		 <div class="error"><?=$EditError?></div>
-		<?php endif; ?>
-			<table>
-			<tr>
-			<td><label>Pseudo :</label></td>
-			<td><?=$user->getPseudo()?> (vous ne pouvez pas le modifier)</td>
-			</tr><tr>
-			<td><label>Nom</label></td>
-			<td><input type="text" name="nom" value="<?=$user->getNom()?>"></td>
-			</tr><tr>
-			<td><label>Mail</label></td>
-			<td><input type="text" name="mail" value="<?=$user->getMail()?>"></td>
-			</tr><tr>
-			<td><label>Prenom</label></td>
-			<td><input type="text" name="prenom" value="<?=$user->getPrenom()?>"></td>
-			</tr><tr>
-			<td><label>Mot de passe</label></td>
-			<td><input onclick="this.checked ? document.getElementById('pass').disabled=false : document.getElementById('pass').disabled=true" type="checkbox">
-			<input id="pass" type="password" name="motDePasse" placeholder="●●●●●●●" disabled></td>
-			</tr>
-			</table>
-			<br>
-			<input name="editAccount" class="button rightcontrol" type="submit" value="Modifier"/>
-			<input name="deleteAccount" class="button rightcontrol" type="submit" value="Supprimer le compte"/>
-			<input type="button" value="Annuler" onclick="window.location.href='index.php';" />
-	</form>
+	<div class="row row-centered">
+		<div class="col-xs-6 col-centered col-fixed">
+			<form method="post">
+				<?php if(isset($EditError)): ?>
+				 <div class="error"><?=$EditError?></div>
+				<?php endif; ?>
+					<table>
+					<tr>
+					<td><label>Pseudo :</label></td>
+					<td><?=$user->getPseudo()?> (vous ne pouvez pas le modifier)</td>
+					</tr><tr>
+					<td><label>Nom</label></td>
+					<td><input type="text" name="nom" value="<?=$user->getNom()?>"></td>
+					</tr><tr>
+					<td><label>Mail</label></td>
+					<td><input type="text" name="mail" value="<?=$user->getMail()?>"></td>
+					</tr><tr>
+					<td><label>Prenom</label></td>
+					<td><input type="text" name="prenom" value="<?=$user->getPrenom()?>"></td>
+					</tr><tr>
+					<td><label>Mot de passe</label></td>
+					<td><input onclick="this.checked ? document.getElementById('pass').disabled=false : document.getElementById('pass').disabled=true" type="checkbox">
+					<input id="pass" type="password" name="motDePasse" placeholder="●●●●●●●" disabled></td>
+					</tr>
+					</table>
+					<br>
+					<input name="editAccount" class="button rightcontrol" type="submit" value="Modifier"/>
+					<input name="deleteAccount" class="button rightcontrol" type="submit" value="Supprimer le compte"/>
+					<input type="button" value="Annuler" onclick="window.location.href='index.php';" />
+			</form>
+		</div>	
+	</div>	
 </div>
 
 </div>
 <!-- FIN CONTENU -->
 <!-- Includes JS liées à la page -->
 <?php 
-  if($connected)
-  echo '<script src="../js/connected.js"></script>';
   //includes js générales + footer
   include '../includes/footer.inc.php' ?>
   <script type="text/javascript">

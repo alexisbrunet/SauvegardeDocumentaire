@@ -1,21 +1,17 @@
 <?php require_once 'user.class.php';?>
 <header>
-    <ul id="headerBar" class="list-inline">
+    <ul class = "navig">
         <!-- Module de connexion / déconnexion -->
-        <li class="pull-left">
+        <li >
+            <div id = "user">
+                <p class="invite">
             <?php if(isset($user)): ?>
             Bienvenue à vous, <?=$user->getNom()?> !
             <?php endif; ?> 
-            <ul class="navig">
-                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                       
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="divider"></li>
-                        <li><a href="../php/deconnect.php">Déconnexion</a></li>
-                    </ul>
-                </li>
-            </ul>
+                </p>
+            </div>
+            <a href="../php/deconnect.php" class="pull-right glyphicon glyphicon-off">Déconnexion</a>
+               
         </li>
         <!-- Logo -->
         <li class="center-block hidden-xs">
