@@ -1,7 +1,7 @@
 <?php
 // Connection au serveur
 try {
-    $dns = 'mysql:host=localhost;dbname=thottbdd';
+    $dns = 'mysql:host=localhost;dbname=thotbdd';
     $utilisateur = 'root'; // a modifier
     $motDePasse = 'root'; // a modifier
     $bd = new PDO( $dns, $utilisateur, $motDePasse );
