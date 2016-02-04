@@ -1,4 +1,4 @@
-<?php include '../includes/verif.php';
+<?php 
   include 'create.php'; 
     if (isset($user))
   $connected = True;
