@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 18 Janvier 2016 à 22:21
+-- Généré le :  Dim 07 Février 2016 à 11:16
 -- Version du serveur :  5.6.20-log
 -- Version de PHP :  5.4.31
 
@@ -29,31 +29,54 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `appartenir` (
   `id_utilisateur` int(11) NOT NULL,
   `id_equipe` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `autorisation`
+-- Structure de la table `autorisation_dossier`
 --
 
-CREATE TABLE IF NOT EXISTS `autorisation` (
+CREATE TABLE IF NOT EXISTS `autorisation_dossier` (
   `id_utilisateur` int(11) NOT NULL,
-  `id_fichier` int(11) NOT NULL,
-  `valeur_autorisation` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `id_dossier` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `autorisation2`
+-- Structure de la table `autorisation_equipe_dossier`
 --
 
-CREATE TABLE IF NOT EXISTS `autorisation2` (
+CREATE TABLE IF NOT EXISTS `autorisation_equipe_dossier` (
+  `id_equipe` int(11) NOT NULL,
+  `id_dossier` int(11) NOT NULL,
+  `valeur_autorisation` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `autorisation_equipe_fichier`
+--
+
+CREATE TABLE IF NOT EXISTS `autorisation_equipe_fichier` (
   `id_equipe` int(11) NOT NULL,
   `id_fichier` int(11) NOT NULL,
   `valeur_autorisation` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `autorisation_fichier`
+--
+
+CREATE TABLE IF NOT EXISTS `autorisation_fichier` (
+  `id_utilisateur` int(11) NOT NULL,
+  `id_fichier` int(11) NOT NULL,
+  `valeur_autorisation` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -65,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `contenir` (
   `id_dossier` int(11) NOT NULL,
   `id_dossier_contenu` int(11) NOT NULL,
   `id_fichier_contenu` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -76,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `contenir` (
 CREATE TABLE IF NOT EXISTS `definir_mot_cle_fichier` (
   `id_mot_cle` int(11) NOT NULL,
   `id_fichier` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -86,8 +109,8 @@ CREATE TABLE IF NOT EXISTS `definir_mot_cle_fichier` (
 
 CREATE TABLE IF NOT EXISTS `dossier` (
 `id_dossier` int(11) NOT NULL,
-  `nom_dossier` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `nom_dossier` varchar(50) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -97,8 +120,8 @@ CREATE TABLE IF NOT EXISTS `dossier` (
 
 CREATE TABLE IF NOT EXISTS `equipe` (
 `id_equipe` int(11) NOT NULL,
-  `nom` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `nom` varchar(50) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -109,11 +132,11 @@ CREATE TABLE IF NOT EXISTS `equipe` (
 CREATE TABLE IF NOT EXISTS `fichier` (
 `id_fichier` int(11) NOT NULL,
   `auteur` int(11) NOT NULL,
-  `titre` varchar(50) NOT NULL,
-  `resume` varchar(500) NOT NULL,
-  `chemin_relatif` varchar(250) NOT NULL,
-  `extention` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `titre` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `resume` varchar(500) CHARACTER SET latin1 NOT NULL,
+  `chemin_relatif` varchar(250) CHARACTER SET latin1 NOT NULL,
+  `extention` varchar(50) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -123,8 +146,8 @@ CREATE TABLE IF NOT EXISTS `fichier` (
 
 CREATE TABLE IF NOT EXISTS `mot_cle` (
 `id_mot_cle` int(11) NOT NULL,
-  `nom` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `nom` varchar(50) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -135,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `mot_cle` (
 CREATE TABLE IF NOT EXISTS `responsable` (
   `id_utilisateur` int(11) NOT NULL,
   `id_equipe` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -145,9 +168,9 @@ CREATE TABLE IF NOT EXISTS `responsable` (
 
 CREATE TABLE IF NOT EXISTS `type_fichier` (
 `id_type_fichier` int(11) NOT NULL,
-  `extention` varchar(50) NOT NULL,
-  `logiciel` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `extention` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `logiciel` varchar(50) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -157,12 +180,12 @@ CREATE TABLE IF NOT EXISTS `type_fichier` (
 
 CREATE TABLE IF NOT EXISTS `utilisateur` (
 `id_utilisateur` int(11) NOT NULL,
-  `nom` varchar(50) NOT NULL,
-  `prenom` varchar(50) NOT NULL,
-  `pseudo` varchar(50) NOT NULL,
-  `adresse_mail` varchar(50) NOT NULL,
-  `mot_de_passe` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `nom` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `prenom` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `pseudo` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `adresse_mail` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `mot_de_passe` varchar(50) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Index pour les tables exportées
@@ -175,16 +198,28 @@ ALTER TABLE `appartenir`
  ADD PRIMARY KEY (`id_utilisateur`,`id_equipe`);
 
 --
--- Index pour la table `autorisation`
+-- Index pour la table `autorisation_dossier`
 --
-ALTER TABLE `autorisation`
- ADD PRIMARY KEY (`id_utilisateur`,`id_fichier`);
+ALTER TABLE `autorisation_dossier`
+ ADD PRIMARY KEY (`id_utilisateur`,`id_dossier`);
 
 --
--- Index pour la table `autorisation2`
+-- Index pour la table `autorisation_equipe_dossier`
 --
-ALTER TABLE `autorisation2`
+ALTER TABLE `autorisation_equipe_dossier`
+ ADD PRIMARY KEY (`id_equipe`,`id_dossier`);
+
+--
+-- Index pour la table `autorisation_equipe_fichier`
+--
+ALTER TABLE `autorisation_equipe_fichier`
  ADD PRIMARY KEY (`id_equipe`,`id_fichier`);
+
+--
+-- Index pour la table `autorisation_fichier`
+--
+ALTER TABLE `autorisation_fichier`
+ ADD PRIMARY KEY (`id_utilisateur`,`id_fichier`);
 
 --
 -- Index pour la table `definir_mot_cle_fichier`
