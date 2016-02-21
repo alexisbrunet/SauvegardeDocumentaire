@@ -39,7 +39,7 @@ class User
 	$this->_prenom=$prenom;
 		$this->_adresse_mail=$mail;
 		$this->_pseudo=$pseudo;
-		$this->_mot_de_passe=password_hash($password, PASSWORD_DEFAULT);
+		$this->_mot_de_passe=$password;
 	}
 	
 	public function setterNoPass($name, $mail, $prenom)
@@ -74,7 +74,7 @@ class User
   	$error.=self::checkPassword($password);
   	if(!empty($error))
   		throw new Exception(substr($error,0,-2));
-		return new self($name, $login, $mail, $prenom, password_hash($password, PASSWORD_DEFAULT)); // password_hash($password, PASSWORD_DEFAULT)
+		return new self($name, $login, $mail, $prenom, $password); // password_hash($password, PASSWORD_DEFAULT)
 	}
 	
 	public static function withLoginPass($info, $password)  // script pour la connexion avec mail ou pseudo et mot de passe, renvoie une instance user avec les informations du compte
@@ -86,7 +86,7 @@ class User
 	$query->execute(array($info, $info));
 	$user=$query->fetch();
 
-  	if(!$user  OR !password_verify($password,$user['mot_de_passe'])) // OR !password_verify($password,$user['mot_de_passe'])
+  	if(!$user  OR !($password)) // OR !password_verify($password,$user['mot_de_passe'])
   		{throw new Exception("Mail ou mot de passe invalide");}
 	return new self($user['nom'], $user['pseudo'], $user['adresse_mail'], $user['prenom'], $user['mot_de_passe']);
 	}

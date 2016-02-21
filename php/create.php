@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 include_once '../includes/connect_bd.php';
 require_once '../includes/user.class.php';
 
