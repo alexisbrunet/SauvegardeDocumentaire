@@ -41,7 +41,7 @@ require '../includes/equipe.class.php';
                           <?php
                           // lancement de la requête (on impose aucune condition puisque l'on désire obtenir la liste complète des propriétaires
                           $idequipe = 'SELECT id_equipe FROM appartenir WHERE id_utilisateur = $session['id_utilisateur']';
-                          $sql = 'SELECT pseudo FROM utilisateur u JOIN appartenir a ON u.id_utilisateur = a.id_utilisateur JOIN WHERE id_equipe = $idequipe';
+                          $sql = 'SELECT pseudo FROM (utilisateur JOIN appartenir) ON utilisateur.id_utilisateur = appartenir.id_utilisateur )JOIN id_equipe = $idequipe';
 
                           // on lance la requête (mysql_query) et on impose un message d'erreur si la requête ne se passe pas bien (or die)
                           $req = mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());

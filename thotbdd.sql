@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Dim 07 Février 2016 à 11:16
+-- Généré le :  Dim 21 Février 2016 à 15:39
 -- Version du serveur :  5.6.20-log
 -- Version de PHP :  5.4.31
 
@@ -78,6 +78,14 @@ CREATE TABLE IF NOT EXISTS `autorisation_fichier` (
   `valeur_autorisation` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `autorisation_fichier`
+--
+
+INSERT INTO `autorisation_fichier` (`id_utilisateur`, `id_fichier`, `valeur_autorisation`) VALUES
+(2, 2, 3),
+(3, 1, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -136,7 +144,15 @@ CREATE TABLE IF NOT EXISTS `fichier` (
   `resume` varchar(500) CHARACTER SET latin1 NOT NULL,
   `chemin_relatif` varchar(250) CHARACTER SET latin1 NOT NULL,
   `extention` varchar(50) CHARACTER SET latin1 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `fichier`
+--
+
+INSERT INTO `fichier` (`id_fichier`, `auteur`, `titre`, `resume`, `chemin_relatif`, `extention`) VALUES
+(1, 3, 'testchoco', 'ceci est un fichier', 'fichiers/testchoco.txt', '.txt'),
+(2, 2, 'blub', 'encore un petit test', 'fichiers/blub.txt', '.txt');
 
 -- --------------------------------------------------------
 
@@ -185,7 +201,15 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `pseudo` varchar(50) CHARACTER SET latin1 NOT NULL,
   `adresse_mail` varchar(50) CHARACTER SET latin1 NOT NULL,
   `mot_de_passe` varchar(50) CHARACTER SET latin1 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Contenu de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `pseudo`, `adresse_mail`, `mot_de_passe`) VALUES
+(2, 'testus', 'test', 'test', 'test@test.fr', 'test'),
+(3, 'jo', 'jo', 'jo', 'jo@gmail.com', 'ducon');
 
 --
 -- Index pour les tables exportées
@@ -287,7 +311,7 @@ MODIFY `id_equipe` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT pour la table `fichier`
 --
 ALTER TABLE `fichier`
-MODIFY `id_fichier` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id_fichier` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `mot_cle`
 --
@@ -302,7 +326,7 @@ MODIFY `id_type_fichier` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
