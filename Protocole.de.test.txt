@@ -1,0 +1,21 @@
+Protocole de test pour envoi de fichier
+
+Selectionner un fichier
+Envoyer le fichier en étant connecté
+Vérifier que le fichier est bien arrivé sur le serveur
+Vérifier que le fichier est bien listé dans l'arboressence
+Vérifier que la table des fichiers a été bien mise à jour en conséquence
+
+Pour un lot de fichier, même méthode
+
+
+Protocole de test pour téléchargement de fichier
+
+Envoyer un fichier sur le serveur
+Se rendre sur la page de gestion des fichiers
+Vérifier que le lien du fichier figure bien sur la page
+Se déconnecter et changer d'utilisateur
+Vérifier qu'il n'a pas accès au fichier
+Se reconnecter sur le premier compte
+Cliquer sur l'image pour télécharger le fichier
+Vérifier que le fichier a bien été téléchargé en local
