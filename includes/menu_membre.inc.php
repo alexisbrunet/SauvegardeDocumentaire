@@ -26,7 +26,7 @@
             <ul  class="nav navbar-nav navbar-brand text-center">
                 <li ><a href="#" class="text-center glyphicon glyphicon-home">Home</a></li> 
                 <li><a  href="../php/account.php" class="text-center">Mon Profil</a></li>                        <!-- creer le fichier profil.php -->
-                <li><a  href="#" class="text-center">Mes Documents</a></li>                     <!-- creer le fichier document.php -->
+                <li><a  href="../php/recherchefichier.php" class="text-center">Mes Documents</a></li>                     <!-- creer le fichier document.php -->
                 <li><a  href="../php/mesEquipes.php" class="text-center">Mes Equipes</a></li>                       <!-- creer le fichier equipe.php -->
             </ul>    
             <ul class=" navbar-nav pull-center">    
